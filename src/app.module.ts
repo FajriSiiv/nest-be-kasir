@@ -20,7 +20,12 @@ import { TransactionModule } from './transaction/transaction.module';
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: false, // False jika di production
+      synchronize: true, // False jika di production
+      autoLoadEntities: true,
+      extra: {
+        ssl: false,
+        max: 10,
+      },
     }),
     ProductsModule,
     CategoryModule,
