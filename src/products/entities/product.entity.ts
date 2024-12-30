@@ -22,9 +22,6 @@ export class Product {
   @Column({ type: 'integer' })
   price: number;
 
-  @Column({ type: 'integer' })
-  stock: number;
-
   @Column('varchar', { array: true })
   categories: string[];
 
